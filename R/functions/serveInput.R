@@ -1,3 +1,40 @@
+#' Add User's input to Postgres database
+#'
+#' Add User's input to database table imputing the missing id column with the next possible values
+#'
+#' This function add the input provided by the User in the App. The function assumes that primary key
+#' of the each table in database is named 'id' and cannot be added by the User. The 'id' column is
+#' being added inside the function after the next possible value of 'id' is taken from the database.
+#'
+#' @param tableName A \code{character} with the name of table to which the values will be inputted
+#' @param newValueList A \code{list} of values to add; the length of the list must be the same as number of columns
+#' of the table minus 1 (except 'id' column)
+#' @param dbConnection A connection to the Postgres database
+#'
+#' @author "Alina Tselinina <tselinina@gmail.com>"
+#' @importFROM RPostgres dbWriteTable dbGetQuery
+#' @importFROM tibble as_tibble_row
+#'
+#' @examples
+#' addValuesToDB("musicians", list('name': 'Whitney', 'surname': 'Houston'), db_connection)
+#'
+addValuesToDB <- function(tableName, newValuesList, dbConnection) {
+  # find next free id number in DB
+  nextId <- dbGetQuery(dbConnection, paste0('SELECT MAX(id) FROM ', tableName))$max
+  
+  newValuesList$id <- nextId + 1
+  
+  # write db statement for inserting new values
+  dbWriteTable(
+    dbConnection,
+    tableName,
+    as_tibble_row(newValuesList),
+    append = TRUE,
+    row.names = FALSE
+  )
+  
+}
+
 #' Create list of input names
 #'
 #' Create list of UI input names for the table chosen by the User
@@ -16,9 +53,9 @@
 #' @return A \code{list} with input names used by UI
 #'
 checkInputForTable <- function(df) {
-
+  
   ListOfIds <- list()
-
+  
   for (i in 1:ncol(df)) {
     ListOfIds[[names(df)[i]]] <- case_when(
       class(df[, i]) == 'character' ~ paste0("txtInput", i),
@@ -56,14 +93,14 @@ inputIsCorrect <- function(listOfInput, message = FALSE) {
     'Please fill all the gaps.',
     'Please put only integer number into musician_id and band_id.'
   )
-
+  
   # check for missing values
   firstCheck <- lapply(listOfInput,
                        function(x) {!is.na(x) & str_trim(x) != ''}) %>% unlist %>% all
   # check for integer numeric input
   secondCheck <-  lapply(listOfInput,
                          function(x) {if (is.numeric(x)) {is.integer(x)} }) %>% unlist %>% all
-
+  
   if (message) {
     return(paste(messages[c(!firstCheck,!secondCheck)], collapse = ' '))
   } else {
@@ -71,38 +108,3 @@ inputIsCorrect <- function(listOfInput, message = FALSE) {
   }
 }
 
-#' Add User's input to Postgres database
-#'
-#' Add User's input to database table imputing the missing id column with the next possible values
-#'
-#' This function add the input provided by the User in the App. The function assumes that primary key
-#' of the each table in database is named 'id' and cannot be added by the User. The 'id' column is
-#' being added inside the function after the next possible value of 'id' is taken from the database.
-#'
-#' @param tableName A \code{character} with the name of table to which the values will be inputted
-#' @param newValueList A \code{list} of values to add; the length of the list must be the same as number of columns
-#' of the table minus 1 (except 'id' column)
-#' @param dbConnection A connection to the Postgres database
-#'
-#' @author "Alina Tselinina <tselinina@gmail.com>"
-#' @importFROM RPostgres dbWriteTable dbGetQuery
-#'
-#' @examples
-#' addValuesToDB("musicians", list('name': 'Whitney', 'surname': 'Houston'), db_connection)
-#'
-addValuesToDB <- function(tableName, newValuesList, dbConnection) {
-  # find next free id number in DB
-  nextId <- dbGetQuery(dbConnection, paste0('SELECT MAX(id) FROM ', tableName))$max
-
-  newValuesList$id <- nextId + 1
-
-  # write db statement for inserting new values
-  dbWriteTable(
-    dbConnection,
-    tableName,
-    as_tibble_row(newValuesList),
-    append = TRUE,
-    row.names = FALSE
-  )
-
-}
