@@ -2,10 +2,11 @@
 #'
 #' UI function for MusicBox Shiny App
 #'
-#' UI function generating front-end for MusicBox Shiny App. The function sources
-#' two small UI R scripts per each tab of the App
+#' UI function generates the front-end for MusicBox Shiny App. The function sources
+#' two small UI R scripts, one per each tab of the App
 #'
 #' @author "Alina Tselinina <tselinina@gmail.com>"
+#' @export
 #'
 #' @import shiny
 #' @import shinyWidgets
