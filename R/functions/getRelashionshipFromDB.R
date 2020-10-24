@@ -2,7 +2,7 @@
 #'
 #' Send queries to Postgres database to get relations between bands and musicians
 #'
-#' This function sends the queries to database to get band-bands and band-musician
+#' This function sends the queries to database to get band-bands and band-musicians
 #' relations
 #'
 #' @param name A \code{character} which is the name of band
