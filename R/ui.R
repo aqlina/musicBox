@@ -6,7 +6,6 @@
 #' two small UI R scripts, one per each tab of the App
 #'
 #' @author "Alina Tselinina <tselinina@gmail.com>"
-#' @export
 #'
 #' @import shiny
 #' @import shinyWidgets
