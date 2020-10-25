@@ -33,5 +33,5 @@ data.frame(list('name'='Paul', 'surname'='McCartney'))))
 
 }
 \author{
-"Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}"
+Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}
 }

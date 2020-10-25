@@ -9,10 +9,11 @@
 #'
 #' @import shiny
 #' @import shinyWidgets
-#' @import shinythemes
-#' @import DT
 #' @import tidyr
 #' @import dplyr
+#' @importFrom stringr str_trim str_to_title
+#' @importFrom RPostgres dbReadTable
+#' @importFrom DT datatable
 #'
 #' @param input shiny input
 #' @param output shiny output
@@ -113,7 +114,7 @@ musicBox_server <- function(input, output, session) {
 
   # generate table according to the choice of user and added values
   output$tableDataOutput <-
-    DT::renderDataTable({
+    renderDataTable({
       datatable(recordAdded())
     })
 

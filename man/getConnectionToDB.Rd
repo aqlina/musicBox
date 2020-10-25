@@ -18,5 +18,5 @@ which contains information about the name of database (DB_NAME), user (DB_USER),
 password (DB_PASSWORD), port (DB_PORT), host (DB_HOST) and schema (DB_SCHEMA).
 }
 \author{
-"Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}"
+Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}
 }

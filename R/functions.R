@@ -9,9 +9,9 @@
 #' password (DB_PASSWORD), port (DB_PORT), host (DB_HOST) and schema (DB_SCHEMA).
 #'
 #'
-#' @author "Alina Tselinina <tselinina@gmail.com>"
+#' @author Alina Tselinina <tselinina@gmail.com>
 #'
-#' @importFrom RPostgres dbConnect
+#' @importFrom RPostgres dbConnect Postgres
 #'
 #' @return Connection to database
 
@@ -46,16 +46,17 @@ getConnectionToDB <- function(){
 #' being added inside the function after the next possible value of 'id' is taken from the database.
 #'
 #' @param tableName A \code{character} with the name of table to which the values will be inputted
-#' @param newValueList A \code{list} of values to add; the length of the list must be the same as number of columns
+#' @param newValuesList A \code{list} of values to add; the length of the list must be the same as number of columns
 #' of the table minus 1 (except 'id' column)
 #' @param dbConnection A connection to the Postgres database
 #'
-#' @author "Alina Tselinina <tselinina@gmail.com>"
+#' @author Alina Tselinina <tselinina@gmail.com>
 #' @importFrom RPostgres dbWriteTable dbGetQuery
 #' @importFrom tibble as_tibble_row
 #'
-#' @examples
+#' @example
 #' addValuesToDB("musicians", list('name': 'Whitney', 'surname': 'Houston'), db_connection)
+#'
 #'
 addValuesToDB <- function(tableName, newValuesList, dbConnection) {
   # find next free id number in DB
@@ -83,11 +84,13 @@ addValuesToDB <- function(tableName, newValuesList, dbConnection) {
 #' are being considered.
 #'
 #' @param df A \code{data.frame} for which the input will be generated
-#' @author "Alina Tselinina <tselinina@gmail.com>"
+#' @author Alina Tselinina <tselinina@gmail.com>
 #' @importFrom dplyr case_when
 #'
 #' @examples
-#' checkInputForTable(iris)
+#' checkInputForTable(musicians)
+#' checkInputForTable(bands)
+#' checkInputForTable(events)
 #'
 #' @return A \code{list} with input names used by UI
 #'
@@ -118,7 +121,7 @@ checkInputForTable <- function(df) {
 #' with instruction to correct the input; \code{FALSE} for getting \code{TRUE/FALSE} status of
 #' input check); \code{FALSE} by default
 #'
-#' @author "Alina Tselinina <tselinina@gmail.com>"
+#' @author Alina Tselinina <tselinina@gmail.com>
 #' @importFrom magrittr %>%
 #' @importFrom tibble as_tibble_row
 #'
@@ -164,7 +167,7 @@ inputIsCorrect <- function(listOfInput, data, message = FALSE) {
 #' @param name A \code{character} which is the name of band
 #' @param dbConnection A connection to Postgres database
 #'
-#' @author "Alina Tselinina <tselinina@gmail.com>"
+#' @author Alina Tselinina <tselinina@gmail.com>
 #'
 #' @importFrom magrittr %>%
 #' @importFrom RPostgres dbGetQuery
@@ -216,12 +219,13 @@ getInfoAboutBand <- function(name, dbConnection) {
 #' @param name A \code{character} which is the full name of musician
 #' @param dbConnection A connection to Postgres database
 #'
-#' @author "Alina Tselinina <tselinina@gmail.com>"
+#' @author Alina Tselinina <tselinina@gmail.com>
 #'
 #' @importFrom magrittr %>%
 #' @importFrom RPostgres dbGetQuery
 #' @importFrom tidyr separate
 #' @importFrom dplyr mutate_at
+#' @importFrom stringr str_split
 #'
 #' @return A \code{list} of two \code{data.frame} with the relations; the first
 #' \code{data.frame} consists of one column 'band' and describes the musician-bands
@@ -276,7 +280,7 @@ getInfoAboutMusician <- function(name, dbConnection) {
 #' of one \code{character} column called 'band'; the second \code{data.frame} consists of
 #' two character columns: 'name' and 'surname'
 #'
-#' @author "Alina Tselinina <tselinina@gmail.com>"
+#' @author Alina Tselinina <tselinina@gmail.com>
 #' @importFrom dplyr case_when
 #' @importFrom stringi stri_replace_last_fixed
 #' @importFrom magrittr %>%
@@ -328,7 +332,7 @@ prepareStoryAboutMusician <- function(name, tableList) {
 #' of one \code{character} column called 'band'; the second \code{data.frame} consists of
 #' two character columns: 'name' and 'surname'
 #'
-#' @author "Alina Tselinina <tselinina@gmail.com>"
+#' @author Alina Tselinina <tselinina@gmail.com>
 #' @importFrom dplyr case_when
 #' @importFrom stringi stri_replace_last_fixed
 #' @importFrom magrittr %>%

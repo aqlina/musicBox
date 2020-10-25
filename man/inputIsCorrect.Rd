@@ -32,5 +32,5 @@ inputIsCorrect(list("    ", 1.5, 2), TRUE)
 inputIsCorrect(list("Hangout Music Festival", 1L, 3L))
 }
 \author{
-"Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}"
+Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}
 }

@@ -21,9 +21,11 @@ the types of data frame columns. Only integer and character columns
 are being considered.
 }
 \examples{
-checkInputForTable(iris)
+checkInputForTable(musicians)
+checkInputForTable(bands)
+checkInputForTable(events)
 
 }
 \author{
-"Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}"
+Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}
 }

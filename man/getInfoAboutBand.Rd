@@ -25,5 +25,5 @@ This function sends the queries to Postgres database to get band-bands and
 and-musicians relations
 }
 \author{
-"Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}"
+Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}
 }

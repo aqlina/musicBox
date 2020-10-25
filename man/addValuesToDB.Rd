@@ -9,10 +9,10 @@ addValuesToDB(tableName, newValuesList, dbConnection)
 \arguments{
 \item{tableName}{A \code{character} with the name of table to which the values will be inputted}
 
-\item{dbConnection}{A connection to the Postgres database}
-
-\item{newValueList}{A \code{list} of values to add; the length of the list must be the same as number of columns
+\item{newValuesList}{A \code{list} of values to add; the length of the list must be the same as number of columns
 of the table minus 1 (except 'id' column)}
+
+\item{dbConnection}{A connection to the Postgres database}
 }
 \description{
 Add User's input to database table imputing the missing id column with the next possible values
@@ -22,10 +22,6 @@ This function add the input provided by the User in the App. The function assume
 of the each table in database is named 'id' and cannot be added by the User. The 'id' column is
 being added inside the function after the next possible value of 'id' is taken from the database.
 }
-\examples{
-addValuesToDB("musicians", list('name': 'Whitney', 'surname': 'Houston'), db_connection)
-
-}
 \author{
-"Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}"
+Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}
 }

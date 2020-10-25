@@ -11,12 +11,8 @@
 #'
 #' @import shiny
 #' @import shinyWidgets
-#' @import shinythemes
-#' @import DT
 #' @import tidyr
 #' @import dplyr
-#' @import magrittr
-#' @import htmltools
 #'
 #' @param id A \code{character} with unique ID
 
@@ -39,11 +35,8 @@ showInfoUI <- function(id) {
 #'
 #' @import shiny
 #' @import shinyWidgets
-#' @import shinythemes
-#' @import DT
 #' @import tidyr
 #' @import dplyr
-#' @import magrittr
 #'
 #' @param input shiny input
 #' @param output shiny output

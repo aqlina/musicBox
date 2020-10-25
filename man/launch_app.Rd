@@ -16,5 +16,5 @@ This function launches MusicBox Shiny App based on the data from Postgres databa
 which must be connected to R before launching.
 }
 \author{
-"Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}"
+Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}
 }
