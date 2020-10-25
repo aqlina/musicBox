@@ -4,10 +4,12 @@
 \alias{inputIsCorrect}
 \title{Check User's input}
 \usage{
-inputIsCorrect(listOfInput, message = FALSE)
+inputIsCorrect(listOfInput, data, message = FALSE)
 }
 \arguments{
 \item{listOfInput}{A \code{list} containing inputted values to check}
+
+\item{data}{A reactive \code{data.frame} with all current values}
 
 \item{message}{\code{TRUE/FALSE} value to choose the function output (\code{TRUE} for getting message
 with instruction to correct the input; \code{FALSE} for getting \code{TRUE/FALSE} status of

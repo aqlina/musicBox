@@ -71,7 +71,7 @@ musicBox_server <- function(input, output, session) {
       })
 
     # if the provided input is correct:
-    if (inputIsCorrect(inputValues)) {
+    if (inputIsCorrect(inputValues, recordAdded())) {
       # prepare input
       addedValues <- lapply(inputValues,
                             function(x) {
@@ -105,8 +105,7 @@ musicBox_server <- function(input, output, session) {
                  data = recordAdded)
       showModal(popupModal(
         failed = TRUE,
-        message = inputIsCorrect(inputValues, message =
-                                   TRUE)
+        message = inputIsCorrect(inputValues, recordAdded(), message=TRUE)
       ))
     }
 

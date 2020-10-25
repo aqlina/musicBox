@@ -113,12 +113,14 @@ checkInputForTable <- function(df) {
 #' as well as checks numeric values for being integers.
 #'
 #' @param listOfInput A \code{list} containing inputted values to check
+#' @param data A reactive \code{data.frame} with all current values
 #' @param message \code{TRUE/FALSE} value to choose the function output (\code{TRUE} for getting message
 #' with instruction to correct the input; \code{FALSE} for getting \code{TRUE/FALSE} status of
 #' input check); \code{FALSE} by default
 #'
 #' @author "Alina Tselinina <tselinina@gmail.com>"
 #' @importFrom magrittr %>%
+#' @importFrom tibble as_tibble_row
 #'
 #' @examples
 #' inputIsCorrect(list("    ", 1.5, 2))
@@ -127,10 +129,11 @@ checkInputForTable <- function(df) {
 #' @return Returns \code{TRUE} if all input is correct, otherwise, returns \code{FALSE}.
 #' If \code{messages=TRUE} the function returns the message to the User with appropriate instruction.
 #'
-inputIsCorrect <- function(listOfInput, message = FALSE) {
+inputIsCorrect <- function(listOfInput, data, message = FALSE) {
   messages <- c(
     'Please fill all the gaps.',
-    'Please put only integer number into musician_id and band_id.'
+    'Please put only integer number into musician_id and band_id.',
+    'The values you want to add are already in this table.'
   )
 
   # check for missing values
@@ -140,10 +143,14 @@ inputIsCorrect <- function(listOfInput, message = FALSE) {
   secondCheck <-  lapply(listOfInput,
                          function(x) {if (is.numeric(x)) {is.integer(x)} }) %>% unlist %>% all
 
+  # check if the added record is a new value for the table
+  data <- rbind(data, as_tibble_row(listOfInput))
+  thirdCheck <- nrow(data) == nrow(distinct(data))
+
   if (message) {
-    return(paste(messages[c(!firstCheck,!secondCheck)], collapse = ' '))
+    return(paste(messages[c(!firstCheck,!secondCheck, !thirdCheck)], collapse = ' '))
   } else {
-    return(all(c(firstCheck, secondCheck)))
+    return(all(c(firstCheck, secondCheck, thirdCheck)))
   }
 }
 
