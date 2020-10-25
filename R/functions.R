@@ -17,13 +17,6 @@
 
 getConnectionToDB <- function(){
 
-  Sys.setenv("DB_HOST" = "localhost")
-  Sys.setenv("DB_USER" = "postgres")
-  Sys.setenv("DB_PASSWORD" = "postgres")
-  Sys.setenv("DB_NAME" = "musicianbox-db")
-  Sys.setenv("DB_PORT" = "5432")
-  Sys.setenv("DB_SCHEMA" = "public")
-
   db_connection <- dbConnect(
       Postgres(),
       host = Sys.getenv("DB_HOST"),
