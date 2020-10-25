@@ -114,7 +114,7 @@ musicBox_server <- function(input, output, session) {
   # generate table according to the choice of user and added values
   output$tableDataOutput <-
     DT::renderDataTable({
-      datatable(recordAdded())
+      DT::datatable(recordAdded())
     })
 
   observeEvent(input$listTables, {
