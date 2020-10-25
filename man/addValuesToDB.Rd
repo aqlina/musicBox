@@ -14,6 +14,9 @@ of the table minus 1 (except 'id' column)}
 
 \item{dbConnection}{A connection to the Postgres database}
 }
+\value{
+nothing
+}
 \description{
 Add User's input to database table imputing the missing id column with the next possible values
 }
