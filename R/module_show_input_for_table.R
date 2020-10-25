@@ -8,6 +8,14 @@
 #' type of the columns of the chosen table. Only character and integer columns are
 #' taken
 #'
+#' @import shiny
+#' @import shinyWidgets
+#' @import shinythemes
+#' @import DT
+#' @import tidyr
+#' @import dplyr
+#' @import magrittr
+#'
 #' @param id A \code{character} with unique ID
 
 showInputUI <- function(id) {
@@ -18,14 +26,22 @@ showInputUI <- function(id) {
 
 #' Generating front-end with the dynamic Input
 #'
-#' Generation front-end with the dynamic Input for the table chosen by the User
+#' Generating front-end with the dynamic Input for the table chosen by the User
 #'
 #' Server function of module which generates dynamic Input based
 #' on the chosen table.
 #'
-#' @param input
-#' @param output
-#' @param session
+#' @import shiny
+#' @import shinyWidgets
+#' @import shinythemes
+#' @import DT
+#' @import tidyr
+#' @import dplyr
+#' @import magrittr
+#'
+#' @param input shiny input
+#' @param output shiny output
+#' @param session environment that can be used to access information and functionality
 #' @param data reactive table
 
 showInput <- function(input, output, session, data) {

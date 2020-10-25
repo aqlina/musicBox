@@ -10,14 +10,45 @@
 #' @import shiny
 #' @import shinyWidgets
 #' @import shinythemes
-#' @import dataset
 #' @import DT
 
 musicBox_ui <- function() {
   fluidPage(mainPanel(tabsetPanel(
     tabPanel("Add your values",
-             source('ui/addYourValuesUI.R', local = TRUE)$value),
+             tagList(
+               # ask the user about table he want to see
+               sidebarPanel(selectInput(
+                 "listTables",
+                 "Choose the table of interest:",
+                 c("Musicians", "Bands", "Events")
+               )),
+
+
+               # show table based on user's choice
+               mainPanel(tagList(
+                 DT::dataTableOutput("tableDataOutput"),
+                 br(),
+                 actionButton("addValueButton", "Add Values")
+               ))
+             )),
+
+
     tabPanel("Find out More",
-             source('ui/findOutMoreUI.R', local = TRUE)$value)
+             # ask the user what to show details about
+             fluidPage(
+               sidebarPanel(tags$div(
+                 class = 'radioButtons',
+                 radioButtons(
+                   'BandOrMusician',
+                   'What do you want to find out more about?',
+                   choices = c("Musician", "Band"),
+                   selected = NA
+                 )
+               ))
+               ,
+
+               # show two tables about bands and musicians cooperated with the band/musician of choice
+               mainPanel(showInfoUI('BandOrMusicianInfo'))
+             ))
   )))
 }
