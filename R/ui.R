@@ -9,6 +9,7 @@
 #'
 #' @import shiny
 #' @import shinyWidgets
+#' @importFrom DT dataTableOutput
 
 musicBox_ui <- function() {
   fluidPage(mainPanel(tabsetPanel(
@@ -24,7 +25,7 @@ musicBox_ui <- function() {
 
                # show table based on user's choice
                mainPanel(tagList(
-                 dataTableOutput("tableDataOutput"),
+                 DT::dataTableOutput("tableDataOutput"),
                  br(),
                  actionButton("addValueButton", "Add Values")
                ))

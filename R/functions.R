@@ -89,7 +89,7 @@ addValuesToDB <- function(tableName, newValuesList, dbConnection) {
 #' @author Alina Tselinina <tselinina@gmail.com>
 #' @importFrom dplyr case_when
 #'
-#' @examples
+#' @example
 #' checkInputForTable(musicians)
 #' checkInputForTable(bands)
 #' checkInputForTable(events)
@@ -127,7 +127,7 @@ checkInputForTable <- function(df) {
 #' @importFrom magrittr %>%
 #' @importFrom tibble as_tibble_row
 #'
-#' @examples
+#' @example
 #' inputIsCorrect(list(name="    ", surname="Smith"), musicians %>% select(-id))
 #' inputIsCorrect(list(name="MusicFest", musician_id=1.5, band_id=9),
 #' events %>% select(-id), message=TRUE)

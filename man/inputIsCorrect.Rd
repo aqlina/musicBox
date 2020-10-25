@@ -26,12 +26,6 @@ Check the correctness of the input provided by the User
 This function checks if the numeric and character input is not empty
 as well as checks numeric values for being integers.
 }
-\examples{
-inputIsCorrect(list(name="    ", surname="Smith"), musicians \%>\% select(-id))
-inputIsCorrect(list(name="MusicFest", musician_id=1.5, band_id=9),
-events \%>\% select(-id), message=TRUE)
-
-}
 \author{
 Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}
 }

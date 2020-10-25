@@ -20,12 +20,6 @@ This function has been designed to help in creating dynamic UI input based on
 the types of data frame columns. Only integer and character columns
 are being considered.
 }
-\examples{
-checkInputForTable(musicians)
-checkInputForTable(bands)
-checkInputForTable(events)
-
-}
 \author{
 Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}
 }

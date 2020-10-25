@@ -5,8 +5,7 @@ Authors@R:
     person(given = "Alina",
            family = "Tselinina",
            role = c("aut", "cre"),
-           email = "tselinina@gmail.com",
-           comment = structure("YOUR-ORCID-ID", .Names = "ORCID"))
+           email = "tselinina@gmail.com")
 Description: What the package does (one paragraph).
 License: CC BY 4.0
 Imports: RPostgres, 
