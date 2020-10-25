@@ -70,7 +70,7 @@ addValuesToDB <- function(tableName, newValuesList, dbConnection) {
   dbWriteTable(
     dbConnection,
     tableName,
-    as_tibble_row(newValuesList),
+    tibble_row(newValuesList),
     append = TRUE,
     row.names = FALSE
   )
@@ -125,7 +125,7 @@ checkInputForTable <- function(df) {
 #'
 #' @author Alina Tselinina <tselinina@gmail.com>
 #' @importFrom magrittr %>%
-#' @importFrom tibble as_tibble_row
+#' @importFrom tibble as_tibble
 #'
 #' @example
 #' inputIsCorrect(list(name="    ", surname="Smith"), musicians %>% select(-id))
@@ -150,7 +150,7 @@ inputIsCorrect <- function(listOfInput, data, message = FALSE) {
                          function(x) {if (is.numeric(x)) {is.integer(x)} }) %>% unlist %>% all
 
   # check if the added record is a new value for the table
-  data <- rbind(data, as_tibble_row(listOfInput))
+  data <- rbind(data, as_tibble(listOfInput))
   thirdCheck <- nrow(data) == nrow(distinct(data))
 
   if (message) {
