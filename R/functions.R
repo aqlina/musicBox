@@ -126,9 +126,10 @@ checkInputForTable <- function(df) {
 #' @importFrom tibble as_tibble_row
 #'
 #' @example
-#' inputIsCorrect(list("    ", 1.5, 2))
-#' inputIsCorrect(list("    ", 1.5, 2), TRUE)
-#' inputIsCorrect(list("Hangout Music Festival", 1L, 3L))
+#' inputIsCorrect(list(name="    ", surname="Smith"), musicians %>% select(-id))
+#' inputIsCorrect(list(name="MusicFest", musician_id=1.5, band_id=9),
+#' events %>% select(-id), message=TRUE)
+#'
 #' @return Returns \code{TRUE} if all input is correct, otherwise, returns \code{FALSE}.
 #' If \code{messages=TRUE} the function returns the message to the User with appropriate instruction.
 #'
