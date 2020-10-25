@@ -1,0 +1,6 @@
+DB_HOST=pg_container
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_NAME=musicianbox-db
+DB_PORT=5432
+DB_SCHEMA=musicianbox

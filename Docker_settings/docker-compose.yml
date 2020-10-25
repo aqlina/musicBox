@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  db:
+    container_name: postgres_db
+    build: ./postgres_container
+    restart: always
+    environment:
+     - POSTGRES_PASSWORD=postgres
+     - POSTGRES_USER=postgres
+    ports: 
+     - "5432:5432"
+
+  shiny:
+    container_name: music_box
+    build: ./shiny_container
+    environment:
+      - DB_HOST=postgres_db
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=musicianbox-db
+      - DB_PORT=5432
+      - DB_SCHEMA=musicianbox
+    ports:
+      - "9999:9999"
+    depends_on:
+      - db
