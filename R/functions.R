@@ -341,7 +341,7 @@ prepareStoryAboutBand <- function(name, tableList) {
     nrow(tableList[[1]]) == 0 ~ paste0(name, " haven't played with another bands."),
     nrow(tableList[[1]]) == 1 ~ paste0("'", name, "' was on the same stage with '",
                                        paste(tableList[[1]]$band, collapse = ''),
-                                       "' band"),
+                                       "' band."),
     TRUE ~ paste0("Popular band '", name, "' played with lots of other bands like '",
                   paste(tableList[[1]]$band, collapse = "', '"), "'.") %>%
            stri_replace_last_fixed(., ',', ' and')

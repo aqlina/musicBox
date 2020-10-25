@@ -47,7 +47,7 @@ musicBox_ui <- function() {
                ))
                ,
 
-               # show two tables about bands and musicians cooperated with the band/musician of choice
+               # show two stories about bands and musicians cooperated with the band/musician of choice
                mainPanel(showInfoUI('BandOrMusicianInfo'))
              ))
   )))
