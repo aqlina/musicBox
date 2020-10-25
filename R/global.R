@@ -13,7 +13,8 @@
 #' @aliases \link{musicBox_ui} \link{musicBox_server}
 
 launch_app <- function(){
-  shinyApp(ui = musicBox_ui, server = musicBox_server)
+  shinyApp(ui = musicBox_ui, server = musicBox_server,
+           options=list(port=9999, host="0.0.0.0", launch.browser=FALSE))
 }
 
 #' musicBox: A package with a Shiny App inside
