@@ -13,7 +13,6 @@
 #' @import dplyr
 #' @importFrom stringr str_trim str_to_title
 #' @importFrom RPostgres dbReadTable
-#' @importFrom DT datatable renderDataTable
 #'
 #' @param input shiny input
 #' @param output shiny output

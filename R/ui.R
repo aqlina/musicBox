@@ -9,7 +9,6 @@
 #'
 #' @import shiny
 #' @import shinyWidgets
-#' @importFrom DT dataTableOutput
 
 musicBox_ui <- function() {
   fluidPage(mainPanel(tabsetPanel(
