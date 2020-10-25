@@ -301,7 +301,7 @@ prepareStoryAboutMusician <- function(name, tableList) {
     # story about all the bands the musician played in (musician - bands relations)
     MBstory <-  case_when(
       nrow(tableList[[1]]) == 0 ~ paste0(name, " haven't played in any bands yet :( "),
-      nrow(tableList[[1]]) == 1 ~ paste0(name, " was playing in ", paste(tableList[[1]]$band, collapse = "")),
+      nrow(tableList[[1]]) == 1 ~ paste0(name, " was playing in ", paste(tableList[[1]]$band, collapse = ""), "."),
       TRUE ~ paste0("Experienced musician ", name, " played in many bands such as '",
                     paste(tableList[[1]]$band, collapse = "', '"), "'.") %>%
              stri_replace_last_fixed(., ',', ' and')
