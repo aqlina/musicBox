@@ -26,12 +26,6 @@ data frame contains the band names which the musician played in. The second
 table contains the name and surname of musicians who played with the musician.
 The story is being generated depending on the number of rows.
 }
-\examples{
-prepareStoryAboutMusician('John Lenon',
-list(data.frame(list('band'='The Rolling Stone')),
-data.frame(list('name'='Paul', 'surname'='McCartney'))))
-
-}
 \author{
 Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}
 }

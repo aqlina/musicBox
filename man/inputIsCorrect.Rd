@@ -26,11 +26,6 @@ Check the correctness of the input provided by the User
 This function checks if the numeric and character input is not empty
 as well as checks numeric values for being integers.
 }
-\examples{
-inputIsCorrect(list("    ", 1.5, 2))
-inputIsCorrect(list("    ", 1.5, 2), TRUE)
-inputIsCorrect(list("Hangout Music Festival", 1L, 3L))
-}
 \author{
 Alina Tselinina \href{mailto:tselinina@gmail.com}{tselinina@gmail.com}
 }

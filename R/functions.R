@@ -87,7 +87,7 @@ addValuesToDB <- function(tableName, newValuesList, dbConnection) {
 #' @author Alina Tselinina <tselinina@gmail.com>
 #' @importFrom dplyr case_when
 #'
-#' @examples
+#' @example
 #' checkInputForTable(musicians)
 #' checkInputForTable(bands)
 #' checkInputForTable(events)
@@ -125,7 +125,7 @@ checkInputForTable <- function(df) {
 #' @importFrom magrittr %>%
 #' @importFrom tibble as_tibble_row
 #'
-#' @examples
+#' @example
 #' inputIsCorrect(list("    ", 1.5, 2))
 #' inputIsCorrect(list("    ", 1.5, 2), TRUE)
 #' inputIsCorrect(list("Hangout Music Festival", 1L, 3L))
@@ -285,7 +285,7 @@ getInfoAboutMusician <- function(name, dbConnection) {
 #' @importFrom stringi stri_replace_last_fixed
 #' @importFrom magrittr %>%
 #'
-#' @examples
+#' @example
 #' prepareStoryAboutMusician('John Lenon',
 #' list(data.frame(list('band'='The Rolling Stone')),
 #' data.frame(list('name'='Paul', 'surname'='McCartney'))))
@@ -337,7 +337,7 @@ prepareStoryAboutMusician <- function(name, tableList) {
 #' @importFrom stringi stri_replace_last_fixed
 #' @importFrom magrittr %>%
 #'
-#' @examples
+#' @example
 #' prepareStoryAboutBand('The Beatles',
 #' list(data.frame(list('band'='The Rolling Stone')),
 #' data.frame(list('name'='Paul', 'surname'='McCartney'))))
