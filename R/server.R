@@ -37,7 +37,7 @@ musicBox_server <- function(input, output, session) {
       title = "Write the values you want to add",
 
       if (failed) {
-        tagList(div(tags$b(message, style = "color: red;"), ),
+        tagList(div(tags$b(message, style = "color: red;")),
                 br())
       },
 
@@ -88,13 +88,13 @@ musicBox_server <- function(input, output, session) {
 
       # read again only the table which was changed:
       if (tableName == 'musicians') {
-        musiciansData(dbReadTable(db_connection, tableName))
+        musiciansData(dbReadTable(db_connection, tableName) %>% select(-id))
         recordAdded(musiciansData())
       } else if (tableName == 'bands') {
-        bandsData(dbReadTable(db_connection, tableName))
+        bandsData(dbReadTable(db_connection, tableName) %>% select(-id))
         recordAdded(bandsData())
       } else if (tableName == 'events') {
-        eventsData(dbReadTable(db_connection, tableName))
+        eventsData(dbReadTable(db_connection, tableName) %>% select(-id))
         recordAdded(eventsData())
       }
 

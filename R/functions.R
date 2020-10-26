@@ -47,10 +47,6 @@ getConnectionToDB <- function(){
 #' @importFrom RPostgres dbWriteTable dbGetQuery
 #' @importFrom tibble as_tibble
 #'
-#' @example
-#' \dontrun{
-#' addValuesToDB("musicians", list('name': 'Whitney', 'surname': 'Houston'), db_connection)
-#' }
 #' @return nothing
 #'
 addValuesToDB <- function(tableName, newValuesList, dbConnection) {
@@ -63,7 +59,7 @@ addValuesToDB <- function(tableName, newValuesList, dbConnection) {
   dbWriteTable(
     dbConnection,
     tableName,
-    tibble_row(newValuesList),
+    as_tibble(newValuesList),
     append = TRUE,
     row.names = FALSE
   )
@@ -119,6 +115,8 @@ checkInputForTable <- function(df) {
 #' @author Alina Tselinina <tselinina@gmail.com>
 #' @importFrom magrittr %>%
 #' @importFrom tibble as_tibble
+#' @importFrom stringi str_trim
+#' @importFrom dplyr mutate_if
 #'
 #' @example
 #' inputIsCorrect(list(name="    ", surname="Smith"), musicians %>% select(-id))
@@ -144,6 +142,10 @@ inputIsCorrect <- function(listOfInput, data, message = FALSE) {
 
   # check if the added record is a new value for the table
   data <- rbind(data, as_tibble(listOfInput))
+  # bring up all characters to the same format to compare
+  prepare_string <- function(x){ x %>% tolower %>% str_trim}
+  data <- data %>% mutate_if(is.character, prepare_string)
+
   thirdCheck <- nrow(data) == nrow(distinct(data))
 
   if (message) {
