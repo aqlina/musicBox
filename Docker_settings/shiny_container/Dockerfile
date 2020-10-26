@@ -10,7 +10,7 @@ RUN apt-get -y update -qq \
     libgsl0-dev \
     libpq-dev
 
-RUN R -e "remotes::install_github('aqlina/musicBox@main', dependencies = 'Imports')"
+RUN R -e "remotes::install_github('aqlina/musicBox@master', dependencies = 'Imports')"
 
 EXPOSE 9999
 
