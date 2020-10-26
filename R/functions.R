@@ -115,7 +115,7 @@ checkInputForTable <- function(df) {
 #' @author Alina Tselinina <tselinina@gmail.com>
 #' @importFrom magrittr %>%
 #' @importFrom tibble as_tibble
-#' @importFrom stringi str_trim
+#' @importFrom stringr str_trim
 #' @importFrom dplyr mutate_if
 #'
 #' @example
