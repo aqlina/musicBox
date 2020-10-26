@@ -1,12 +1,12 @@
 Package: musicBox
-Title: Provide a Shiny App with 'add value' and 'show relations' functionality
+Title: musicBox runs Shiny App based on Postgres database
 Version: 1.0.0.0
 Authors@R: 
     person(given = "Alina",
            family = "Tselinina",
            role = c("aut", "cre"),
            email = "tselinina@gmail.com")
-Description: What the package does (one paragraph).
+Description: Provide a Shiny App with 'add value' and 'show relations' functionality
 License: CC BY 4.0
 Imports: RPostgres, 
          dplyr, 
