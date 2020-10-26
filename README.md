@@ -52,8 +52,8 @@ Please notice, launch_app() uses specified host and ports values. What's more, y
 
 Some of the future App development options:
 
--While creating this App I mostly focused on implementing functionalities, so the App's appearance is ordinary. It is possible to use theme from *shinythemes* library for lazy design or CSS for cooler, custom App designs if time allows.
+- While creating this App I mostly focused on implementing functionalities, so the App's appearance is ordinary. It is possible to use theme from *shinythemes* library for lazy design or CSS for cooler, custom App designs if time allows.
 
--The tests I implemented are covering only controlling correctness of data input and only one, the most important, function I created (would say 30% of functionality). For sure, it is not enough when it comes to real-life projects where much more tests must be implemented to easier maintenance. Moreover, the tests must also cover UI part (optionally with *golem* library which helps to control html output). For that purpose, more advanced testing can be applied with *RSelenium* library, the library which behaves as a user scrolling the webpage.
+- The tests I implemented are covering only controlling correctness of data input and only one, the most important, function I created (would say 30% of functionality). For sure, it is not enough when it comes to real-life projects where much more tests must be implemented to easier maintenance. Moreover, the tests must also cover UI part (optionally with *golem* library which helps to control html output). For that purpose, more advanced testing can be applied with *RSelenium* library, the library which behaves as a user scrolling the webpage.
 
--When it comes to checking User's input and giving the User tips for providing data correctly, only fundamental checks were implemented. There are still some ways the User can destroy the App by  :) For example, inputting numbers in the names/surnames.
+- When it comes to checking User's input and giving the User tips for providing data correctly, only fundamental checks were implemented. There are still some ways the User can destroy the App :) For example, inputting numbers in the names/surnames.
