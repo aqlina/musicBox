@@ -43,8 +43,8 @@ Please notice, launch_app() uses specified host and ports values. What's more, y
 4. **Postgres DB:** Database is the best way to store the data: it controls the uniqueness of records; prevents form deleting tables which are connected to other; prevents from adding data of wrong type; speed up extraction the data, therefore, the  processing the data.
 5. **tidyr, dplyr:** the most convenient way of preparing the data (combining string naming within usual naming); helps with better readability of the R code.
 6. **stringr, stringi:** very useful and intuitive libraries for working with string in R.
-7. **devtools**: this is the best way of creating package because it builds all the files needed, control tests checks, control imported libraries, control documentation completeness with the human-friendly communicates.
-8. **roxygen2:** helps to create very nice documentation with all necessary sections, translates R codes to .md format, so a developer doesn't need to to switch R with other.
+7. **devtools**: this is the best way of creating package because it builds all the files needed, controls test checks, controls imported libraries, controls documentation completeness with the human-friendly communicates.
+8. **roxygen2:** helps to create very nice documentation with all necessary sections, translates R codes to .md format, so a developer doesn't need to switch R with other format.
 9. **package:** package is the best way for sharing the codes and documentation, therefore, make the maintenance of the codes much easier. Even, if you share it with the future you :)
 10. **testhat:** great and intuitve tool for writing automated tests for the package or an App and it is fully compatible with devtools.
 11. **Visual Code Studio:** great tool for using R and git simultaneously; makes it ease to see the changes made and selective commiting.
