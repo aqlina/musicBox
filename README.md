@@ -47,7 +47,7 @@ Please notice, launch_app() uses specified host and ports values. What's more, y
 8. **roxygen2:** helps to create very nice documentation with all necessary sections, translates R codes to .md format, so a developer doesn't need to switch R with other format.
 9. **package:** package is the best way for sharing the codes and documentation, therefore, make the maintenance of the codes much easier. Even, if you share it with the future you :)
 10. **testhat:** great and intuitve tool for writing automated tests for the package or an App and it is fully compatible with devtools.
-11. **Visual Code Studio:** great tool for using R and git simultaneously; makes it ease to see the changes made and selective commiting.
+11. **Visual Code Studio:** great tool for using R and git simultaneously; makes it easy to see the changes made and selective commiting.
 
 
 ## The sky is a limit
@@ -56,6 +56,6 @@ Some of the future App development options:
 
 - While creating this App I mostly focused on implementing functionalities, so the App's appearance is ordinary. It is possible to use theme from *shinythemes* library for lazy design or CSS for cooler, custom App designs if time allows.
 
-- The tests I implemented are covering only some of the functionality: 1. the correctness of data input; 2. the most import function (~ only 30% of functionality). For sure, it is not enough when it comes to real-life projects where much more tests must be implemented. Moreover, the tests must also cover UI part (optionally with *golem* library which helps to control html output). As an option, more advanced testing can be applied for that purpose using *RSelenium* library, the library which behaves as a user scrolling the webpage.
+- The tests I implemented are covering only some of the functionality: 1. the correctness of data input; 2. the most important function (~ only 30% of functionality). For sure, it is not enough when it comes to real-life projects where much more tests must be implemented. Moreover, the tests must also cover UI part (optionally with *golem* library which helps to control html output). As an option, more advanced testing can be applied for that purpose using *RSelenium* library, the library which behaves as a user scrolling the webpage.
 
 - When it comes to checking User's input and giving the User tips for providing data correctly, only fundamental checks were implemented. There are still some ways the User can destroy the App :) For example, inputting numbers in the names/surnames will not cause an error, but will look unappropriately.
