@@ -1,6 +1,6 @@
 context("check names and types of the columns read from DB")
 
-test_that("tables musicians, bands and events have appropriate name and types of columns",
+test_that("tables musicians, bands and events have wrong name and/or types of columns",
           {
             expect_identical(
               sapply(dbReadTable(getConnectionToDB(), "musicians"), class),
