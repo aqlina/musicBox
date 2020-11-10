@@ -39,7 +39,7 @@ Please notice, launch_app() uses specified host and ports values. What's more, y
 
 1. **R/Shiny**: they are both very powerful tools for creating applications, especially, the App using statistics or analytics behind.
 2. **Docker:**  sets up environment required to the App smooth work easily; it creates isolated container (environment) for the App, therefore, makes the App "compatible" with all other operating systems and no conflicts are possible.
-3. **Git:** allows to control any change in the code; prevents a developer from loosing the code, even if the local machine will crash; makes the work on the code with the team members much easier; allows to have a working/production version of the App permanently and continue working on new functionalities.
+3. **Git:** allows to control any change in the code; prevents a developer from loosing the code, even if the local machine crashes; makes the work on the code with the team members much easier; allows to have a working/production version of the App permanently and continue working on new functionalities.
 4. **Postgres DB:** Database is the best way to store the data: it controls the uniqueness of records; prevents form deleting tables which are connected to other; prevents from adding data of wrong type; speed up extraction of the data, therefore, the processing the data.
 5. **tidyr, dplyr:** the most handy way of preparing the data (combining string naming within usual naming); helps with better readability of the R code.
 6. **stringr, stringi:** very useful and intuitive libraries for working with string in R.
