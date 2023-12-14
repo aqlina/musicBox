@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of musicBox package is to provide the User with easy-to-run Shiny App. The App contains 2 tabs per one functionality each: add own values to Postgres "musicianbox-db" database connected to the App (reactive update of the changed table) and show relations between musicians and bands. Postgres database containes 3 tables 'musicians', 'bands' and 'events' and one view 'prepared_events'. The tables are connected with each other with their primary key (*id* column). Database main assumption: all tables have unique naming (there are no two musicians with the same full name).
+The goal of musicBox package is to provide the User with easy-to-run Shiny App. Demonstarting CRUD operations is the main goal of the app rather than front-end visability (not themes were applied). The App contains 2 tabs per one functionality each: add own values to Postgres "musicianbox-db" database connected to the App (reactive update of the changed table) and show relations between musicians and bands. Postgres database containes 3 tables 'musicians', 'bands' and 'events' and one view 'prepared_events'. The tables are connected with each other with their primary key (*id* column). Database main assumption: all tables have unique naming (there are no two musicians with the same full name).
 
 ## Installation and Running
 
